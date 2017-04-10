@@ -1,0 +1,52 @@
+@import "{}/imports/plugins/included/default-theme/client/styles/main.less";
+
+@font-face {
+  font-family: 'proxima';
+  src: "{}/public/custom/fonts/ProximaNova-Reg.otf";
+}
+
+.sortButtonContainer {
+  font-family: 'proxima';
+  font-size: 1.5vw;
+  float: right;
+  margin-right: 20px;
+  text-align: left;
+  border: 1px solid lightgrey;
+  background-color: white;
+}
+.sortButtonContainer img{
+  width: 10px;
+  height: auto;
+  display: inline;
+}
+.sortListContainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid lightgrey;
+}
+.sortListItem {
+  background-color: white;
+  border: 1px lightgrey;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'proxima';
+}
+
+.sortButton {
+  padding-top: 0px;
+  background-color: white;
+  border: 0px rgba(0,0,0,0.0);
+  cursor: pointer;
+}
+.sortButtonDiv {
+  // width: 30%;
+  float: right;
+  margin-right: 50px;
+  position: relative;
+  z-index: 1;
+  background-color: white;
+}

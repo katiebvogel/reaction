@@ -1,0 +1,19 @@
+<template name="eeProductDetailSimple">
+  {{#if isEnabled}}
+    {{!-- Use new product detail page --}}
+    <div>
+      {{> React component=PDC}}
+    </div>
+    <div>
+      <h1> Evereve Layout Component Rendering!</h1>
+    </div>
+    {{else}}
+    <h1> It's definitely not rendering...</h1>
+    {{/if}}
+</template>
+
+<template name="eeProductDetailSimpleToolbar">
+  <div>
+    {{> React PublishContainerComponent}}
+  </div>
+</template>

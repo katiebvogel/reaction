@@ -1,0 +1,20 @@
+{
+  "name": "data_import",
+  "description": "Evereve data import for Reaction",
+  "version": "1.0.0",
+  "main": "register.js",
+  "homepage": "https://github.com/evereveofficial/data_import",
+  "url": "https://github.com/evereveofficial/data_import",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evereveofficial/data_import.git"
+  },
+  "author": "Reaction Commerce <hello@evereveofficial.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/evereveofficial/data_import/issues"
+  },
+  "dependencies": {
+    "elasticsearch": "^12.1.3"
+  }
+}

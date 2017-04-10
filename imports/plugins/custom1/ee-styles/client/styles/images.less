@@ -1,0 +1,220 @@
+
+// NOT ACTIVE.  Maybe NEED to delete because all style for plp will need to go in the same less file..?
+@import "{}/imports/plugins/included/default-theme/client/styles/main.less";
+
+// -------------------------
+
+.product-grid-item {
+  width: 25%;
+  // max-width: 25%;
+  max-width: 250px;
+  min-width: 200px;
+  .flex(1 1 25%);
+
+  position: relative;
+  padding: 10px;
+  margin-bottom: 60px;
+
+
+  .product-primary-images {
+    width: 80%;
+    height: 350px;
+
+    img {
+      // height: 100%;
+      width: 100%;
+    }
+  }
+
+  .product-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+
+    img {
+      display: none;
+    }
+
+    @media print {
+      img {
+        display: block;
+      }
+    }
+  }
+
+  .product-grid-item-images {
+    width: 100%;
+    height: 375px;
+
+    overflow: hidden;
+  }
+
+  @media @mobile {
+    .flex-basis(50%);
+    width: 50%;
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  @media @tablet {
+    .product-grid-item-images {
+      height: 250px;
+    }
+  }
+
+
+  // ----------------------------------------
+  // Small product: default
+  &.product-small {
+    max-width: 25%;
+
+    @media screen and (max-width: @screen-lg-min) {
+      max-width: 33%;
+      .flex-basis(33%);
+    }
+
+    @media screen and (max-width: @screen-sm-max) {
+      max-width: 50%;
+      .flex-basis(50%);
+    }
+
+    @media screen and (max-width: @screen-xs-max) {
+      max-width: 100%;
+      -webkit-flex-basis: 100%;
+
+      .product-grid-item-images {
+        height: 250px;
+      }
+    }
+  }
+
+
+
+  // ----------------------------------------
+  // Medium product, with additional preview images
+  &.product-medium {
+    max-width: 50%;
+    .flex-basis(50%);
+
+    .product-grid-item-images {
+      height: 325px;
+    }
+
+
+    .product-primary-images {
+      width: auto;
+      height: 100%;
+    }
+
+    @media @mobile {
+      width: 100%;
+      max-width: 100%;
+
+      .flex-basis(100%);
+
+      .product-grid-item-images {
+        height: 200px;
+      }
+    }
+
+    @media @tablet {
+      .product-grid-item-images {
+        height: 225px;
+      }
+    }
+  }
+
+  // ----------------------------------------
+  // Large hero-like product
+  &.product-large {
+    min-width: 100%;
+    .flex-basis(100%);
+
+    .product-grid-item-images {
+      height: 400px;
+    }
+
+    .grid-content {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      padding: 10px 25px;
+
+      background-color: @brand-dark-color;
+      background-color: @brand-secondary-color;
+      color: @brand-light-color;
+    }
+
+    .overlay {
+      color: @white;
+      padding-top: 0;
+    }
+
+    .overlay-title {
+      font-size: @product-grid-large-title-size;
+      text-align: left;
+    }
+
+    // -- Responsive
+    @media @mobile {
+      width: 100%;
+      max-width: 100%;
+
+      .flex-basis(100%);
+
+      .product-grid-item-images {
+        height: 225px;
+      }
+
+      .grid-content {
+        position: static;
+      }
+
+      .overlay-title {
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+
+// ----------------------------------------------------------------------------
+
+
+.product-additional-images {
+  .display(flex);
+  .flex(0 0 auto);
+  .flex-direction(column);
+
+  width: 20%;
+
+  border-left: @border-thin;
+  background-color: @white;
+
+  .product-image {
+    .flex(1 1 auto);
+    border-bottom: @border-thin;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  img {
+    .flex(1 1 auto);
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    border-bottom: @border-thin;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+}

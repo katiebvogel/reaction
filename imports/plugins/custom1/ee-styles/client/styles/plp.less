@@ -1,0 +1,449 @@
+// Import the main.less file from the base reaction theme
+// {} means start from the root of meteor instance
+// you can also include CSS from node_modules by doing {}/node_modules/path_to_module_css
+@import "{}/imports/plugins/included/default-theme/client/styles/main.less";
+@font-face {
+    font-family: ProximaNova-Reg;
+    src: "{}/public/custom/fonts/ProximaNova-Reg.otf";
+}
+.product-grid {
+  *, *:before, *:after {box-sizing:  border-box !important;}
+  .img-responsive {width:100%;}
+  a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+  }
+}
+
+.container-main{
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.product-grid-list {
+  .display(flex);
+  .flex-wrap(wrap);
+  .flex-direction(row);
+  .justify-content(flex-start);
+}
+// ---------------------------------------------------------------------------- evereve stuff below for each grid item display
+// includes overlaying the sold out badges on top of image
+
+.grid-alerts {
+  display: flex;
+  // position: absolute;
+  bottom: 4px;
+  right: 8px;
+}
+
+.product-grid-item-alerts {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.product-grid-controls {
+  .display(flex);
+  .flex(0 1 auto);
+  .align-items(center);
+  .justify-content(center);
+  .margin-left(5px);
+
+  width: auto;
+  padding: 0;
+  overflow: hidden;
+
+  .more-options-container {
+    position: relative;
+  }
+
+  .rui.btn {
+    margin-left: 5px;
+  }
+}
+
+.badge-overlay-container{
+  position: relative;
+}
+.product-grid-badges {
+  .display(flex);
+  .flex(1 1 auto);
+  .align-items(left);
+  .justify-content(left);
+  .margin-left(5px);
+  width: auto;
+  // padding: 0;
+  overflow: hidden;
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 4px;
+  right: 5px;
+  z-index: 1;
+  color:#C92058;
+  font-style:italic;
+  white-space: nowrap;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+
+.products {
+  padding-top: 200px;
+}
+
+.category-picture {
+  min-width: 500px;
+  overflow: hidden;
+  margin:0 auto;
+  .display(flex);
+  // max-width: 60%;
+  img {
+    width: 100%;
+  }
+}
+.category-title {
+  font-family: ProximaNova-Reg;
+  text-transform: capitalize;
+  font-weight: 400;
+  margin-left: 30px;
+}
+
+// -------------------------
+
+.product-grid-item {
+  width: 25%;
+  // max-width: 25%;
+  max-width: 250px;
+  min-width: 200px;
+  .flex(1 1 25%);
+
+  position: relative;
+  padding: 10px;
+  margin-bottom: 60px;
+
+
+  .product-primary-images {
+    width: 80%;
+    height: 350px;
+
+    // img {
+    //   // height: 100%;
+    //   width: 100%;
+    // }
+
+
+  .image-slide-wrapper {
+    position: relative;
+    // display: block;
+    width: 100%;
+    height: 100%;
+
+  .ee-alt-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    /* transitions */
+-webkit-transition: all .4s ease;
+   -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+     -o-transition: all .4s ease;
+        transition: all .4s ease;
+      }
+        .ee-alt-image:nth-child(1) {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center center;
+          filter: alpha(opacity=100); /* IE stuff */
+          opacity: 1;
+          z-index: 0;
+        }
+        .ee-alt-image:nth-child(2) {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center center;
+          filter: alpha(opacity=0); /* IE stuff */
+          opacity: 0;
+          z-index: -1;
+        }
+
+    // img {
+    //   display: none;
+    // }
+    // @media print {
+    //   img {
+    //     display: block;
+    //   }
+  // }
+  }
+  .image-slide-wrapper:hover .ee-alt-image:nth-child(1){
+    filter: alpha(opacity=0);
+    opacity: 0;
+    z-index: -1;
+  }
+  .image-slide-wrapper:hover .ee-alt-image:nth-child(2){
+    filter: alpha(opacity=100);
+    opacity: 1;
+    z-index: 0;
+  }
+}
+
+  .product-grid-item-images {
+    width: 100%;
+    height: 375px;
+
+    overflow: hidden;
+  }
+
+  @media @mobile {
+    .flex-basis(50%);
+    width: 50%;
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  @media @tablet {
+    .product-grid-item-images {
+      height: 250px;
+    }
+  }
+}
+
+  // ----------------------------------------
+  // Small product: default
+  &.product-small {
+    max-width: 25%;
+
+    @media screen and (max-width: @screen-lg-min) {
+      max-width: 33%;
+      .flex-basis(33%);
+    }
+
+    @media screen and (max-width: @screen-sm-max) {
+      max-width: 50%;
+      .flex-basis(50%);
+    }
+
+    @media screen and (max-width: @screen-xs-max) {
+      max-width: 100%;
+      -webkit-flex-basis: 100%;
+
+      .product-grid-item-images {
+        height: 250px;
+      }
+    }
+  }
+
+
+
+  // ----------------------------------------
+  // Medium product, with additional preview images
+  &.product-medium {
+    max-width: 50%;
+    .flex-basis(50%);
+
+    .product-grid-item-images {
+      height: 325px;
+    }
+
+
+    .product-primary-images {
+      width: auto;
+      height: 100%;
+    }
+
+    @media @mobile {
+      width: 100%;
+      max-width: 100%;
+
+      .flex-basis(100%);
+
+      .product-grid-item-images {
+        height: 200px;
+      }
+    }
+
+    @media @tablet {
+      .product-grid-item-images {
+        height: 225px;
+      }
+    }
+  }
+
+  // ----------------------------------------
+  // Large hero-like product
+  &.product-large {
+    min-width: 100%;
+    .flex-basis(100%);
+
+    .product-grid-item-images {
+      height: 400px;
+    }
+
+    .grid-content {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      padding: 10px 25px;
+
+      background-color: @brand-dark-color;
+      background-color: @brand-secondary-color;
+      color: @brand-light-color;
+    }
+
+    .overlay {
+      color: @white;
+      padding-top: 0;
+    }
+
+    .overlay-title {
+      font-size: @product-grid-large-title-size;
+      text-align: left;
+    }
+
+    // -- Responsive
+    @media @mobile {
+      width: 100%;
+      max-width: 100%;
+
+      .flex-basis(100%);
+
+      .product-grid-item-images {
+        height: 225px;
+      }
+
+      .grid-content {
+        position: static;
+      }
+
+      .overlay-title {
+        text-align: center;
+      }
+    }
+  }
+
+
+
+
+// ----------------------------------------------------------------------------
+
+
+.product-additional-images {
+  .display(flex);
+  .flex(0 0 auto);
+  .flex-direction(column);
+
+  width: 20%;
+
+  border-left: @border-thin;
+  background-color: @white;
+
+  .product-image {
+    .flex(1 1 auto);
+    border-bottom: @border-thin;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  img {
+    .flex(1 1 auto);
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    border-bottom: @border-thin;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+}
+
+
+
+
+.product-grid-item .overlay {
+  color: @product-overlay-text;
+  opacity: 0.7;
+  width: 100%;
+  padding-top: 10px;
+  word-break: break-all;
+  text-transform: lowercase;
+  .currency-symbol {
+    white-space: nowrap;
+    text-decoration: none;
+    text-align: center;
+  }
+  .overlay-title {
+  font-family: ProximaNova-Reg;
+  text-transform: capitalize;
+  font-size: @font-size-base;
+  font-weight: 600;
+  text-align: center;
+  white-space: wrap;
+word-break: normal;
+// opacity: 1;
+}
+  .color-choice-list {
+    text-align: center;
+    margin: auto;
+    display: block;
+    height: 30px;
+    width: 100px;
+
+  }
+  .color-choice {
+    display: inline-block;
+    // justify-content: center;
+      margin: auto;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border-style: solid;
+      border-color: #D3D3D3;
+      border-width: 1px;
+
+      // .product-popup-image {
+      //   display: none;
+      // }
+  }
+
+  // .color-choice:hover .product-popup-image {
+  //   display: block;
+  //   width: 100px;
+  //   height: 120px;
+  //   z-index: 1;
+  // }
+
+// Below style was originally a start for the react component that was to display an alternate image on clicking (a button)
+  .altImageContainer {
+    width: 20px;
+    height: 24px;
+    display: inline;
+  }
+  .alt-image-on-click {
+    background-color: white;
+    font-size: 10px;
+    font-family: 'proxima';
+    // display: block;
+  }
+  .alt-image-button{
+    background-color: white;
+    border: 1px gray;
+  }
+  .alt-image-view {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,19 @@
+<template name="evereveContent">
+  <div class="grid-content">
+    <a href="{{pathFor 'product' handle=handle}}" data-event-category="grid" data-event-action="product-click" data-event-label="grid product click" data-event-value="{{_id}}">
+    </a>
+      <div class="overlay">
+        <div class="color-choice-list">
+          {{#each hexCode in displayHex}}
+            <div class = "color-choice" style="background-color: {{hexCode }}">
+            </div>
+          {{/each}}
+        </div>
+        <div class="overlay-title">{{displayBrand}} {{title}}</div>
+         <div class="currency-symbol">${{displayOurPrice}}</div>
+      </div>
+      <!-- <div class="reactAltImage">
+        {{> React component=altImage}}
+      </div> -->
+  </div>
+</template>

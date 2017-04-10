@@ -1,0 +1,334 @@
+// Import the main.less file from the base reaction theme
+// {} means start from the root of meteor instance
+// you can also include CSS from node_modules by doing {}/node_modules/<path_to_module_css>
+// @import "main.less";
+@import "{}/imports/plugins/included/default-theme/client/styles/main.less";
+
+
+// Override any variables from the default theme
+@navbar-default-bg: #FFFFFF;
+@cart-icon-bg: #C92058;
+@cart-icon-badge: #C92058;
+@navbar-default-link-color: black;
+@link-color: #000000;
+@brand-primary-color: #C92058;
+@brand-secondary-color: #FFFFFF;
+@AddToCartButton: #C92058;
+@add-to-cart-text: #c92058;
+
+// PDP STUFF
+// variant-list is the container
+// variant-detail/ variant-detail-selected is the item itself
+//     contains title, action, alerts
+//     the title is the name of the variant
+//     the action is the price
+//     the alerts is sold out/etc...
+
+.pdpSizeChart {
+
+}
+
+.variant-detail {
+border-radius: 50%;
+border-color: #c92058;
+color: rgba(0,0,0,0);
+background-color: #C92058;
+width: 40px;
+height: 40px;
+}
+
+.variant-detail-selected {
+border-color: #c92058;
+border-width: thin;
+}
+
+.variant-select-option {
+border-radius: 50%;
+color: rgba(0,0,0,0);
+}
+
+.variant-select-option .btn {
+border-radius: 50%;
+width: 40px;
+height: 40px;
+}
+
+.title {
+text-align: center;
+}
+
+.pdp.add-to-cart input{
+background-color: #c92058;
+border-color: #c92058;
+}
+.pdp.add-to-cart button{
+  background-color: #c92058;
+  border-color: #c92058;
+}
+
+// HOME AND NAVBAR
+
+.content{
+  padding-top: 200px;
+  z-index: 2;
+  top:20px;
+}
+.dropdown-container {
+  .content {
+  padding-top: 5px;
+  line-height: normal;
+  }
+}
+.allheader {
+  position: fixed;
+  z-index: 1;
+  height: auto;
+  max-height: 50px;
+  text-align: left;
+  float: left;
+  width: 95%;
+  color: white;
+  z-index: 2;
+}
+.navbar {
+  color: #000000;
+  display: block;
+  float: left;
+  margin: 0 auto;
+  padding-left: 2.5%;
+  width: 95%;
+  max-width: 95%;
+}
+.nav-ee {
+  width: 95%;
+  max-width: 95%;
+  display: block;
+  // overflow-x: scroll;
+}
+.tiny-evereve-logo{
+  height:15px;
+  width: auto;
+  // margin: 0 auto;
+}
+.topbar {
+  // margin: 30px
+  height: auto;
+  max-height: 50px;
+  text-align: left;
+  float: left;
+  width: 95%;
+  color: white;
+  padding-left: 2.5%;
+  padding-right: 0%;
+  padding-top: 1%;
+  z-index: 2;
+}
+.evereve .trendsend .store {
+  height: 50px;
+  position: absolute;
+}
+.evereve a {
+  background-color: #A01744;
+  float: left;
+  padding: 9px;
+  width:20%;
+  color: white;
+  font-size: .75em;
+}
+.trendsend a {
+  background-color: #B91D50;
+  float: left;
+  padding: 10px;
+  width: 20%;
+  color: white;
+  font-size: .75em;
+}
+.store a {
+  background-color: #CA235A;
+  float: left;
+  padding: 10px;
+  width: 60%;
+  font-size: .75em;
+}
+.logo {
+  padding-top: 1.5%;
+  padding-left: 2.5%;
+  padding-bottom: 1.5%;
+  text-align: left;
+  float: left;
+  background-color: white;
+  margin: 0 auto;
+  width: 95%;
+}
+.logo-img {
+  padding: 15px;
+  float: left;
+}
+
+.reaction-navigation-header {
+  margin-left: 30px;
+  background-color: white;
+  display: block;
+}
+.globalBanner {
+  margin: 0 auto;
+  padding-top: 1.5%;
+  padding-left: 2.5%;
+  padding-bottom: 1.5%;
+  max-width: 90%;
+}
+.globalBanner img {
+  width: 90%;
+  height: auto;
+}
+#main {
+  background-color: white;
+}
+.fanshots-div {
+  padding-top: 5px;
+  margin: 0 auto;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  width: 95%;
+}
+.fanshots-img {
+  display: inline-block;
+  width: 100%;
+}
+
+#small-text {
+  font-size: 12px;
+}
+#navbar-text-color {
+  color: black;
+  font-size: 10px;
+}
+.header {
+  background-color: #fff;
+}
+#btn-keep-shopping {
+  background-color: #C92058;
+}
+p, a, div {
+  color: black;
+  background-color: #fff;
+}
+.footer-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  margin: auto;
+}
+.footer-top {
+  background-color: #B91D50;
+  width: 95%;
+  display: block;
+  margin: 0 auto;
+}
+.footer {
+  color: white;
+  background-color: #A01744;
+  width: 95%;
+  text-align: center;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+/////////////////////////////
+// STUFF FOR THE SLIDESHOW //
+/////////////////////////////
+
+.slider {
+  box-shadow: 0px 4px 10px #9d9d9d;
+  padding: 0;
+  margin: 0;
+  width: 80%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 900px;
+  border-radius: 4px;
+}
+
+.slider ul {
+  width: 1000%;
+  height: auto;
+  position: relative;
+  list-style: none;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  -moz-animation:slide-animation 15s infinite;
+  -webkit-animation:slide-animation 15s infinite;
+}
+
+.slider ul:hover {
+  -moz-animation-play-state:paused;
+  -webkit-animation-play-state:paused;
+}
+
+.slider li {
+  width: 10%;
+  list-style: none;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-image {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.slider-span {
+  position: relative;
+  height: 50px;
+  display: block;
+  font-size: 0.8em;
+  bottom: 0;
+  padding: 0.5px 20px 0px 20px;
+  margin-top: -50px;
+  overflow: hidden;
+  background-color:rgba(54,44,48,0.6);
+  color: #fcfcfc;
+  text-shadow: 0px 1px 1px #9d9d9d;
+  font-weight: normal;
+  border-radius: 4px;
+}
+.slider-p {
+  color:  #fcfcfc;
+}
+
+@-webkit-keyframes slide-animation {
+  1% {left: 0%; opacity: 1;}
+  18% {left: 0%; opacity: 1}
+  19% {opacity: 0.2;}
+  20% {left: -100%; opacity: 1;}
+  58% {left: -100%; opacity: 1;}
+  59% {opacity: 0.2;}
+  60% {left: -200%; opacity: 1;}
+  98% {left: -200%; opacity: 1;}
+  99% {opacity: 0.5;}
+  100% {left: 0%;}
+}
+
+@-moz-keyframes slide-animation {
+  1% {left: 0%; opacity: 1;}
+  18% {left: 0%; opacity: 1}
+  19% {opacity: 0.2;}
+  20% {left: -100%; opacity: 1;}
+  58% {left: -100%; opacity: 1;}
+  59% {opacity: 0.2;}
+  60% {left: -200%; opacity: 1;}
+  98% {left: -200%; opacity: 1;}
+  99% {opacity: 0.5;}
+  100% {left: 0%;}
+}
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
+.advert {
+  position: absolute;
+  height: 100%;
+}

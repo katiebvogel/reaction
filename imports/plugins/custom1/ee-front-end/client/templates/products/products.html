@@ -1,0 +1,52 @@
+<template name="myProducts">
+ <div class="products">
+   <div class="product-container">
+       <div class="category-picture">
+         {{> React component=categoryBanner}}
+       </div>
+       <div class="navFilterContainer">
+         <div class="crumbNavContainer">
+           {{> React component=crumblyNavigation}}
+         </div>
+       <div class="filter">
+         {{> React component=filterThis}}
+       </div>
+     </div>
+     <div class="sortButtonDiv">
+       {{>React component=sortThatButton}}
+     </div>
+       {{#if ready}}
+       {{>productGrid products=products}}
+
+       {{#if loadMoreProducts}}
+       <div class="product-load-more" id="productScrollLimitLoader">
+         <button
+           class="btn btn-inverse btn-block btn-lg"
+           data-i18n="app.loadMoreProducts"
+           data-event-action="loadMoreProducts">Load more products</button>
+       </div>
+         {{/if}}
+
+          {{#unless Template.subscriptionsReady}}
+        <div class="spinner-container">
+          <div class="spinner"></div>
+        </div>
+        {{/unless}}
+        {{else}}
+        <div class="ee-loader">
+            {{>React component=spinThatEvereve}}
+        </div>
+      {{/if}}
+    </div>
+</div>
+</template>
+
+
+<template name="evereveProductListGrid">
+ <div class="row">
+   {{>productGrid products=products}}
+   {{#if hasPermission "createProduct"}}
+     {{>productList}}
+   {{/if}}
+ </div>
+</template>
