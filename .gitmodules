@@ -1,0 +1,3 @@
+[submodule "imports/plugins/custom/custom"]
+	path = imports/plugins/custom/custom
+	url = https://github.com/evereveofficial/custom.git
